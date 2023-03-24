@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Gives your document a title that shows up in browsers title bar-->	
+	<title>Dice Game</title>
+</head>
+
+<!--defines main content and holds all the code and content -->
+<body>
+    <!--displays most important/main heading and a line of text on the webpage-->
+    <h1 
+    style="width: 420px; height: 50px; background-color:cornflowerblue;">Do you want to Roll the Dice?</h1>
+
+	<!--creates a paragraph in the page with unique identifier that links javascript code-->
+	<p id="results"></p>
+	
+	<!--creates a storing space for the cover image with adjusted size-->
+	<div>
+	    <img id="displayImage" src= "pic/dice8.png" width="420px" height="350px">
+	</div>
+	
+	<!--Buttton is created + text, when clicked a function is run with size and styling adjustments-->
+	<button 
+		onclick="changePic();"
+		style="background-color:cornflowerblue; width: 210px; height: 50px; ">
+		<b>LETS ROLL</b>
+	</button>
+	
+	<!--Button is created + text, when clicked a function is run with size and styling adjustments-->
+	<button 
+		onclick="noButton();";
+		style="background-color:cornflowerblue; width: 210px; height: 50px;">
+		<b>NO THANKS</b>
+	</button>
+	
+	<!--Adds a line break-->
+	<br>
+	<br/>
+	
+	<!--Button is created + text, when clicked a function is run with size and styling adjustments-->
+	<button 
+		onclick="infoButton();"
+		style="background-color:cornflowerblue; width: 424px;height:35px">
+		<b>INSTRUCTIONS</b>
+	</button>
+
+<!--Allows to add javascript code to the html document-->
+<script type="text/javascript">
+
+/*Contains all code to be executed in one place. It randomly changes dice picture with matching roll and displays it once 'lets roll' button is pressed. */
+function changePic() {
+	//Declares rand variable to store a randomly generated number between 1-6.
+	var rand = Math.floor(Math.random()*6) +1;
+	/*Declares 'pictures' as an arrey [] that stores all 6 posssible dice picture sources, placing ',' at index [0] to place first dice1.png at index [1] to correctly represent the dice roll and random roll */
+	pictures = [,"pic/dice1.png", "pic/dice2.png", "pic/dice3.png", "pic/dice4.png", "pic/dice5.png", "pic/dice6.png"];
+	/*Searches the doc & locates the specified 'displayImage' id in html code, replacing the cover image source with one of the random image sources, specified in code above. [pictures]*/
+	document.getElementById("displayImage").src = pictures[rand];
+	/*Searches the doc & locates the specified 'results' id in html code and replaces that id's content with 'your roll is' text & random number rolled */
+	document.getElementById("results").innerHTML = "Your roll is " + rand;
+
+}
+
+//A function that contains all code to be executed in one place. It displays a random message once 'no, thanks' button is clicked.
+function noButton() { 
+	//Declares 'stats' as an array [] that stores three separate strings.
+	const stats = ["See you again!", "Thanks for visiting my webpage","Are you sure you dont want to play?"]
+	//Declares 'rand' variable to store and generate a number from 0-3.
+	var rand = Math.floor(Math.random()*3);
+	//displays a box with an ok button in the browser & displays one of the 'stats' above, randomply, each time button is pressed.
+	alert(stats[rand]);
+}
+
+function infoButton() { 
+
+	var info = "1.To play: Press Lets Roll button."
+	+ '\r\n' + "[Dice will be rolled and results displayed]"
+	+ '\r\n'
+	+ '\r\n' + "2.To not play: Press No, thanks button."
+	+ '\r\n' + "[You will be greeted with an goodbye message.]"
+
+	alert(info);
+}
+
+// This program can be also written using if and if else and else statements like shown below in the commented out code:
+//function randNumss() {
+	//let rand = Math.floor(Math.random()*6)+1; 
+		//if (rand == 1) {
+			//document.getElementById("nums").innerHTML = "Your roll is " + rand;
+			//document.getElementById("dice").src = "dice1.png"
+ 	//}
+ 		//else if (rand == 2) {
+ 			//document.getElementById("nums").innerHTML = "Your roll is " + rand;
+ 			//document.getElementById("dice").src = "dice2.png"
+ 		//}
+ 		//else if (rand == 3) {
+ 			//document.getElementById("nums").innerHTML = "Your roll is " + rand;
+ 			//document.getElementById("dice").src = "dice3.png"
+ 		//}
+ 		//else if (rand == 4) {
+ 			//document.getElementById("nums").innerHTML = "Your roll is " + rand;
+ 			//document.getElementById("dice").src = "dice4.png"
+ 		//}
+ 		//else if (rand == 5) {
+ 			//document.getElementById("nums").innerHTML = "Your roll is " + rand;
+ 			//document.getElementById("dice").src = "dice5.png"
+ 		//}
+ 		//else {
+ 			//document.getElementById("nums").innerHTML = "Your roll is " + rand;
+ 			//document.getElementById("dice").src = "dice6.png"
+ 		//}
+//}
+
+</script>
+
+
+</body>
+</html>

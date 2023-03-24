@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<!--Links CSS file -->
+	<link rel="stylesheet" type="text/css" href="css/calculator_group_css.css">
+</head>
+
+<!--creating a division encapsulating everything, the input fields type button and text inside-->
+<div class="calculator">
+	<!--Type (text) input is created, no text is allowed to be entered except the buttons with maxlength=0-->
+	<div><input maxlength="0" class="calculatorOutput" type="text" id="text-input" placeholder="0"></div>
+	<!--Creating another devision and placing the input type (button) within it, for easy customisation later with CSS-->
+	<div class="calculatorKeys">
+		<!--Each button has its own class and function-->
+		<input class="calculatorKeyOperator" type="button" value="+" onclick="display('+')">
+		<input class="calculatorKeyOperator" type="button" value="-" onclick="display('-')">
+		<input class="calculatorKeyOperator" type="button" value="*" onclick="display('*')">
+		<input class="calculatorKeyOperator" type="button" value="/" onclick="display('/')">
+		<input class="calculatorKey" type="button" value="7" onclick="display(7)">
+		<input class="calculatorKey" type="button" value="8" onclick="display(8)">
+		<input class="calculatorKey" type="button" value="9" onclick="display(9)"> 
+		<input class="calculatorKey" type="button" value="4" onclick="display(4)">
+		<input class="calculatorKey" type="button" value="5" onclick="display(5)">
+		<input class="calculatorKey" type="button" value="6" onclick="display(6)">
+		<input class="calculatorKey" type="button" value="1" onclick="display(1)">
+		<input class="calculatorKey" type="button" value="2" onclick="display(2)">
+		<input class="calculatorKey" type="button" value="3" onclick="display(3)">
+		<input class="calculatorKey" type="button" value="0" onclick="display(0)">
+		<input class="calculatorKeyOperator" type="button" value="." onclick="display('.')">
+		<input class="calculatorKeyOperator" type="button" value ='←' onclick ="delOneChar()">
+		<input class="calculatorKeyAC" type="button" value="AC" onclick="clearDisplay()">
+		<input class="calculatorKeyEnter" type="button" value="=" onclick="calculate()">
+	</div>
+</div>
+
+<br>
+<br>
+
+<body>
+	<!-- Links JS file-->
+	<script src="js/javaScript.js"></script>
+
+	<br>
+	<br>
+	<p class="textDisplayed">Calculation results will be displayed below :</p>
+
+	<!--Allows results to be displayed in the web browser-->
+	<br><h1 id="results"></h1>
+
+</body>
+
+</html>
